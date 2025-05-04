@@ -17,18 +17,26 @@ The Striver A2Z DSA Sheet is a curated roadmap by Striver (Raj Vikramaditya) tha
 ## **📌 Topics Covered**
 <br>
 * Basics of C++ and STL
+<br>
 * Sorting and Searching
+<br>
 * Recursion and Backtracking
+<br>
 * Arrays, Strings, Linked Lists
+<br>
 * Stacks and Queues
+<br>
 * Trees and Binary Trees
+<br>
 * Graphs and DP
+<br>
 * Greedy Algorithms
+<br>
 * Tries, Heaps, and more...
 
 ## **🔗 Sheet Link**
 <br>
-📄 [Striver's A2Z DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
+📄 [Striver's A2Z DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/).
 
 ## **🧠 Motivation**
 <br>
