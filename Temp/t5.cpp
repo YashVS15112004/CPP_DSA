@@ -1,30 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-int numRabbits(vector<int> &answers)
+int minMaxDifference(int num) 
 {
-    unordered_map<int, int> mp;
-    int ans = 0;
-    for (auto it : answers)
-        mp[it]++;
-    for (auto it : mp)
+    string s = to_string(num),p = s;
+    int n = s.size();
+    char nm1 = 'X',nm2 = p[0];
+    for(int i=0;i<n;i++)
     {
-        if (it.first == 0)
-            ans += it.second;
-        else if (it.first + 1 >= it.second)
-            ans += (it.first + 1);
-        else
+        if(p[i]==nm2) p[i] = '0';
+        if(nm1=='X' && s[i]!='9')
         {
-            int div = it.first + 1;
-            int quo = it.second / div;
-            int rem = it.second % div;
-            rem = (rem!=0)?div:0;
-            ans += (quo * div) + rem;
+            nm1 = s[i];
+            s[i] = '9';
         }
+        else if(s[i]==nm1) s[i] = '9';
     }
-    return ans;
+    int mx = stoi(s);
+    int mn = stoi(p);
+    // cout<<s<<" "<<p<<endl;
+    // cout<<mx<<" "<<mn<<endl;
+    return mx-mn;
 }
 int main()
 {
-    vector<int> answers = {0, 0, 1, 1, 1};
-    cout << numRabbits(answers);
+    int num = 90693669;
+    cout<<minMaxDifference(num);    
 }
