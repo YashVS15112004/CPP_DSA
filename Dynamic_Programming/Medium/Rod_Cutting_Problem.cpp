@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 /* -------------------- Memoization -------------------- */
 int memoUtil(const vector<int> &wt, const vector<int> &val,
              int idx, int W, vector<vector<int>> &dp)
@@ -17,14 +16,12 @@ int memoUtil(const vector<int> &wt, const vector<int> &val,
 
     return dp[idx][W] = max(notTaken, taken);
 }
-
 int unboundedKnapsackMemo(int n, int W,
                           const vector<int> &val, const vector<int> &wt)
 {
     vector<vector<int>> dp(n, vector<int>(W + 1, -1));
     return memoUtil(wt, val, n - 1, W, dp);
 }
-
 /* -------------------- Tabulation -------------------- */
 int unboundedKnapsackTab(int n, int W,
                          const vector<int> &val, const vector<int> &wt)
@@ -47,7 +44,6 @@ int unboundedKnapsackTab(int n, int W,
     }
     return dp[n - 1][W];
 }
-
 /* -------------------- Space‑Optimized -------------------- */
 int unboundedKnapsackSpaceOpt(int n, int W,
                               const vector<int> &val, const vector<int> &wt)
@@ -70,7 +66,6 @@ int unboundedKnapsackSpaceOpt(int n, int W,
     }
     return cur[W];
 }
-
 /* ------------------------- main ------------------------ */
 int main()
 {
@@ -78,10 +73,8 @@ int main()
     vector<int> val = {5, 11, 13};
     int W = 10;
     int n = wt.size();
-
     cout << "Memoization : " << unboundedKnapsackMemo(n, W, val, wt) << '\n';
     cout << "Tabulation  : " << unboundedKnapsackTab(n, W, val, wt) << '\n';
     cout << "Space Opt   : " << unboundedKnapsackSpaceOpt(n, W, val, wt) << '\n';
-
     return 0;
 }
