@@ -10,15 +10,15 @@ int getAnsMemo(vector<int> &Arr, int n, int ind, int buy, int cap, vector<vector
         return dp[ind][buy][cap];
 
     int profit;
-    if (buy == 0)
+    if (buy)
     {
-        profit = max(0 + getAnsMemo(Arr, n, ind + 1, 0, cap, dp),
-                     -Arr[ind] + getAnsMemo(Arr, n, ind + 1, 1, cap, dp));
+        profit = max(0 + getAnsMemo(Arr, n, ind + 1, 1, cap, dp),
+                     -Arr[ind] + getAnsMemo(Arr, n, ind + 1, 0, cap, dp));
     }
     else
     {
-        profit = max(0 + getAnsMemo(Arr, n, ind + 1, 1, cap, dp),
-                     Arr[ind] + getAnsMemo(Arr, n, ind + 1, 0, cap - 1, dp));
+        profit = max(0 + getAnsMemo(Arr, n, ind + 1, 0, cap, dp),
+                     Arr[ind] + getAnsMemo(Arr, n, ind + 1, 1, cap - 1, dp));
     }
 
     return dp[ind][buy][cap] = profit;
@@ -27,7 +27,7 @@ int getAnsMemo(vector<int> &Arr, int n, int ind, int buy, int cap, vector<vector
 int maxProfitMemo(vector<int> &prices, int n)
 {
     vector<vector<vector<int>>> dp(n, vector<vector<int>>(2, vector<int>(3, -1)));
-    return getAnsMemo(prices, n, 0, 0, 2, dp);
+    return getAnsMemo(prices, n, 0, 1, 2, dp);
 }
 
 // ───── Tabulation Version ─────────────────────────────
