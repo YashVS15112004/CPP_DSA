@@ -11,7 +11,7 @@
       "cwd": "d:/CPP_DSA/Trees/Easy",
       "program": "d:/CPP_DSA/Trees/Easy/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "D:/MSYS2/ucrt64/bin/gdb.exe",  // <- FIX THIS PATH
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -31,7 +31,7 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "D:\\MSYS2\\ucrt64\\bin\\gdb.exe",
+      "miDebuggerPath": "D:/MSYS2/ucrt64/bin/gdb.exe",  // <- FIX THIS PATH
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
